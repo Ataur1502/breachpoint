@@ -74,18 +74,45 @@
 }
 
 /* Mobile */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .rules {
-    padding: 90px 6%;
+    padding: clamp(60px, 10vh, 90px) 5%;
   }
 
   .rules-title {
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    margin: 40px 0 20px;
+  }
+
+  .rules-subtitle {
+    font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+    margin: 24px 0 12px;
+  }
+
+  .rules-content li {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    /* Readable text on small screens */
   }
 
   .flag-format {
-    font-size: 0.9rem;
-    padding: 14px 16px;
+    font-size: 0.85rem;
+    padding: 12px 14px;
+    margin: 16px 0 20px;
+    word-break: break-word;
+    /* Prevent overflow of long flags */
+  }
+}
+
+@media (max-width: 480px) {
+  .rules-title {
+    border-left-width: 3px;
+    padding-left: 10px;
+  }
+
+  .rules-content li {
+    padding-left: 16px;
+    /* slightly less indentation */
   }
 }
 
@@ -95,4 +122,6 @@
   color: #38bdf8;
   margin: 30px 0 16px;
   padding-left: 10px;
+  border-left: 2px solid rgba(56, 189, 248, 0.3);
+  /* Subtle guide line */
 }
