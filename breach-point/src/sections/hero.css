@@ -215,4 +215,22 @@
   .hero-content {
     padding: 0 5%;
   }
+
+  .hero-title-line {
+    font-size: clamp(1.2rem, 6vw, 2.5rem);
+    white-space: normal;
+    /* Allow wrapping on mobile */
+    line-height: 1.2;
+  }
+
+  .hero-uni-line {
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-title-line {
+    font-size: 1.2rem;
+    /* Ensure it fits on very small screens */
+  }
 }
