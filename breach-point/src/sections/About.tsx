@@ -11,7 +11,7 @@ import {
   Mic,
   Brackets,
 } from "lucide-react";
-import "./About.css";
+import "./about.css";
 
 const About: React.FC = () => {
   return (

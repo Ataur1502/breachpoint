@@ -1,7 +1,7 @@
 import React from "react";
 import Countdown from "../components/countdown";
 import MatrixRain from "../components/matrixrain";
-import "./Hero.css";
+import "./hero.css";
 
 const Hero: React.FC = () => {
   return (

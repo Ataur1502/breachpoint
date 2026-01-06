@@ -1,6 +1,6 @@
 import React from "react";
 import { Linkedin, Mail, Crown, Terminal, HeartHandshake, Megaphone, Handshake } from "lucide-react";
-import "./Team.css";
+import "./team.css";
 
 const Team: React.FC = () => {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
