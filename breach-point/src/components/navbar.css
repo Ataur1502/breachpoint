@@ -1,0 +1,119 @@
+.navbar {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  width: calc(100% - 28px);
+  max-width: 1200px;
+
+  background: rgba(2, 6, 23, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #1e293b;
+
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.05);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 26px;
+}
+
+/* Logo */
+.navbar-logo {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  color: #22c55e;
+  text-transform: uppercase;
+  font-family: "Silkscreen", monospace;
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  gap: 26px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #94a3b8;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* Cyber underline (not traditional underline) */
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #22c55e;
+  transition: width 0.25s ease;
+}
+
+.navbar-links a:hover {
+  color: #e5e7eb;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: #22c55e;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 12px 18px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 0;
+
+    background: rgba(2, 6, 23, 0.95);
+    border-bottom: 1px solid #1e293b;
+    backdrop-filter: blur(16px);
+
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+    /* Behind the header bar itself so it slides out */
+  }
+
+  .navbar-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+}

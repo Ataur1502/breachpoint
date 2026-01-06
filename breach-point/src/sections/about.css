@@ -1,0 +1,219 @@
+.about {
+  padding: 120px 10%;
+  background-color: #020617;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ───── SPLIT LAYOUT ───── */
+.about-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 120px;
+}
+
+.about-split.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Text */
+.about-text {
+  flex: 1;
+}
+
+.about-title {
+  font-family: "Courier New", monospace;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.about-title.center {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-text p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-text li {
+  color: #94a3b8;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.about-text li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+}
+
+/* Big icon */
+.about-icon {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-icon svg {
+  color: #22c55e;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 30px rgba(34, 197, 94, 0.25));
+}
+
+/* ───── DOMAINS ───── */
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  justify-content: center;
+  max-width: 1200px;
+  /* Ensure it doesn't get too wide if container grows */
+  margin: 0 auto;
+}
+
+.domain-card {
+  padding: 40px 30px;
+  text-align: center;
+
+  background: #020617;
+  border-radius: 16px;
+  border: 1px solid #1e293b;
+
+  box-shadow:
+    inset -2px -2px 6px rgba(255, 255, 255, 0.02),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.6);
+
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.domain-card:hover {
+  transform: translateY(-6px);
+  border-color: #22c55e;
+}
+
+.domain-card svg {
+  color: #22c55e;
+  margin-bottom: 20px;
+  width: 48px;
+  height: 48px;
+}
+
+.domain-card h3 {
+  color: #e5e7eb;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  font-weight: lighter;
+}
+
+.domain-card p {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ───── MOBILE ───── */
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 6%;
+  }
+
+  .about-split {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-split.reverse {
+    flex-direction: column;
+  }
+
+  .about-icon {
+    margin-top: 30px;
+  }
+
+  .domain-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+/* ───── SCROLL REVEAL ANIMATIONS ───── */
+
+/* Base hidden state */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+/* When visible */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Direction modifiers */
+.reveal.left {
+  transform: translateX(-50px);
+}
+
+.reveal.right {
+  transform: translateX(50px);
+}
+
+.reveal.up {
+  transform: translateY(50px);
+}
+
+/* Active state overrides */
+.reveal.left.active,
+.reveal.right.active,
+.reveal.up.active {
+  transform: translateX(0) translateY(0);
+}
+
+/* ───── DOMAIN STAGGER (OPTIONAL BUT NICE) ───── */
+.domain-card.reveal {
+  transition-delay: 0.15s;
+}
+
+.domain-card.reveal:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.domain-card.reveal:nth-child(3) {
+  transition-delay: 0.45s;
+}
+
+.domain-card.reveal:nth-child(4) {
+  transition-delay: 0.6s;
+}
+
+.domain-card.reveal:nth-child(5) {
+  transition-delay: 0.75s;
+}
+
+.domain-card.reveal:nth-child(6) {
+  transition-delay: 0.9s;
+}

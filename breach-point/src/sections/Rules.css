@@ -1,0 +1,98 @@
+.rules {
+  padding: 120px 10%;
+  background-color: #020617;
+}
+
+.rules-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Section titles */
+.rules-title {
+  font-family: "Courier New", monospace;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #e5e7eb;
+  margin: 60px 0 24px;
+  border-left: 4px solid #22c55e;
+  padding-left: 14px;
+}
+
+/* Content block */
+.rules-content {
+  margin-bottom: 40px;
+}
+
+/* Lists */
+.rules-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rules-content li {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+/* Cyber bullet */
+.rules-content li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+}
+
+/* Paragraph text */
+.rules-content p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* Flag format box */
+.flag-format {
+  background-color: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 20px 0 24px;
+
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #22c55e;
+
+  box-shadow:
+    inset -2px -2px 6px rgba(255, 255, 255, 0.02),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .rules {
+    padding: 90px 6%;
+  }
+
+  .rules-title {
+    font-size: 1.6rem;
+  }
+
+  .flag-format {
+    font-size: 0.9rem;
+    padding: 14px 16px;
+  }
+}
+
+.rules-subtitle {
+  font-family: "Courier New", monospace;
+  font-size: 1.4rem;
+  color: #38bdf8;
+  margin: 30px 0 16px;
+  padding-left: 10px;
+}

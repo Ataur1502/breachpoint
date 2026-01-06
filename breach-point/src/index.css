@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #05070a;
+  color: #e5e7eb;
+  font-family: "Silkscreen", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* ───── GLOBAL ANIMATIONS ───── */
+/* Base hidden state */
+/* ───── GLOBAL ANIMATIONS ───── */
+/* Base hidden state */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  /* Default "up" */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Direction variants */
+.reveal.left {
+  transform: translateX(-50px);
+}
+
+.reveal.right {
+  transform: translateX(50px);
+}
+
+.reveal.up {
+  transform: translateY(30px);
+}
+
+/* Reset transform when active */
+.reveal.active.left,
+.reveal.active.right,
+.reveal.active.up {
+  transform: translate(0);
+}
+
+/* If you have JS checking for IntersectionObserver, these would normally be opacity: 0. 
+   However, if the user doesn't have the JS running for Team section, they'd stay hidden forever.
+   I will set them to visible by default for now to solve the "can't see anything" panic. */

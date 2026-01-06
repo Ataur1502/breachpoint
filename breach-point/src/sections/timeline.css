@@ -1,0 +1,142 @@
+.timeline {
+    padding: 100px 10%;
+    background-color: #020617;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline h2 {
+    text-align: center;
+    font-family: "Courier New", monospace;
+    font-size: 2.25rem;
+    letter-spacing: 2px;
+    color: #e5e7eb;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+
+.timeline-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* The vertical line */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #1e293b;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Left side items */
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+/* Right side items */
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* The dots */
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #020617;
+    border: 2px solid #22c55e;
+    border-radius: 50%;
+    top: 20px;
+    z-index: 10;
+    right: -8px;
+    /* For left items */
+    transition: all 0.3s ease;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -8px;
+    /* For right items */
+}
+
+/* Content box */
+.timeline-content {
+    padding: 20px 30px;
+    background-color: rgba(2, 6, 23, 0.5);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: #22c55e;
+    transform: translateY(-4px);
+}
+
+.timeline-item:hover .timeline-dot {
+    background-color: #22c55e;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+}
+
+.timeline-date {
+    font-family: "Courier New", monospace;
+    color: #22c55e;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.timeline-title {
+    color: #e5e7eb;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .timeline-container::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+        text-align: left;
+    }
+
+    .timeline-dot {
+        left: 12px !important;
+        /* Force dot to left line */
+        right: auto;
+    }
+}
