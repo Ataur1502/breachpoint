@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Countdown.css";
+import "./countdown.css";
 
 interface CountdownProps {
   targetDate?: string;
