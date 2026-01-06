@@ -134,24 +134,67 @@
 /* ───── MOBILE ───── */
 @media (max-width: 768px) {
   .about {
-    padding: 80px 6%;
+    padding: 60px 5%;
+    /* Reduced padding */
+  }
+
+  .about-split {
+    flex-direction: column-reverse;
+    /* Text comes after icon for flow */
+    text-align: center;
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  .about-split.reverse {
+    flex-direction: column-reverse;
   }
 
   .about-split {
     flex-direction: column;
-    text-align: center;
   }
 
   .about-split.reverse {
     flex-direction: column;
   }
 
-  .about-icon {
-    margin-top: 30px;
+  .about-split .about-text {
+    order: 2;
+  }
+
+  .about-split .about-icon {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .about-text ul {
+    display: inline-block;
+    /* Centers the list block */
+    text-align: left;
+    /* Aligns text inside list to left */
+    margin-top: 20px;
+  }
+
+  .about-title {
+    font-size: 1.75rem;
+  }
+
+  .about-icon svg {
+    width: 100px;
+    /* Resize for mobile */
+    height: 100px;
   }
 
   .domain-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr;
+    /* Single column on small mobile */
+    gap: 20px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .domain-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
