@@ -1,5 +1,5 @@
 import React from "react";
-import "./eventDetails.css";
+import "./eventdetails.css";
 
 const EventDetails: React.FC = () => {
   return (
