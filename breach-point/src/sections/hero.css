@@ -1,63 +1,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Outfit:wght@300;500&display=swap");
-
 .hero {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
   background-color: #000c07;
 }
-
 /* Matrix canvas */
 .matrix-canvas {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
-
 /* Dark overlay for readability */
 .hero-overlay {
   position: relative;
   z-index: 2;
   min-height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: radial-gradient(circle at center,
       rgba(0, 0, 0, 0.75),
       rgba(1, 5, 23, 0.95));
 }
-
 .hero-content {
   text-align: center;
   max-width: 100%;
   padding: 0 5%;
 }
-
 /* ───────── LINE 1 ───────── */
 /* BREACH POINT SEASON–1 */
 /* ───────── LINE 1 ───────── */
 /* BREACH POINT SEASON–1 */
 .hero-uni-line {
-  font-family: 'Orbitron', 'Rajdhani', 'Inter', sans-serif;
-
+  font-family: 'Outfit', sans-serif;
   /* Cleaner, formal font */
-  font-weight: 500;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  /* Adjusted for formal look */
-  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 2vw, 1.25rem);
+  /* Slightly more compact */
+  letter-spacing: 2px;
   text-transform: uppercase;
-  font-style: bold;
-  color: #4FD1FF;
-  /* Lighter color for formal text */
+  color: #a5f3fc;
+  /* Cyan-200 for clarity */
   margin-bottom: 20px;
-  line-height: 1.4;
-
+  line-height: 1.6;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards 0.5s;
 }
-
 .hero-season-line {
   font-family: "Silkscreen", monospace;
   /* Keep pixel font for brand name */
@@ -66,28 +56,23 @@
   text-transform: uppercase;
   color: #38bdf8;
   margin-bottom: 30px;
-
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards 0.5s;
 }
-
 /* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
 .hero-season-line span {
   color: #22c55e;
 }
-
 /* ───────── LINE 2 ───────── */
 /* 24 HOUR NATIONAL CTF CHALLENGE */
 .hero-main-title {
@@ -95,17 +80,14 @@
   font-weight: 400;
   letter-spacing: 2px;
   color: #1b8040;
-
   margin: 0 auto 30px;
   max-width: 100%;
   text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
-
 .hero-title-line {
   display: block;
   /* Fluid font size: scales between 1.5rem (mobile) and 4rem (desktop) */
@@ -114,11 +96,9 @@
   text-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
   white-space: nowrap;
   /* Force single line */
-
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards 0.8s;
 }
-
 /* ───────── PARTNERS SECTION ───────── */
 .hero-partners {
   display: flex;
@@ -129,31 +109,26 @@
   flex-wrap: wrap;
   /* Ensure it wraps on mobile */
   width: 100%;
-
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards 1.7s;
 }
-
 .partner-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
 }
-
 .partner-block span {
   font-family: "Silkscreen", monospace;
   color: #94a3b8;
   font-size: 0.9rem;
   letter-spacing: 2px;
 }
-
 .partner-block h2 {
   font-size: 1rem;
   color: #94a3b8;
   margin: 0;
 }
-
 .partner-block img {
   height: clamp(50px, 8vw, 90px);
   /* Slightly smaller than single logo to fit two */
@@ -162,11 +137,9 @@
   opacity: 0.9;
   transition: opacity 0.3s;
 }
-
 .partner-block img:hover {
   opacity: 1;
 }
-
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .hero-partners {
@@ -174,7 +147,6 @@
     flex-direction: row;
     /* Keep side by side unless very small */
   }
-
   /* If screen is very narrow, stack them */
   @media (max-width: 400px) {
     .hero-partners {
@@ -183,7 +155,6 @@
     }
   }
 }
-
 /* ───────── THEME LABEL ───────── */
 .hero-theme-label {
   font-size: 1.25rem;
@@ -192,42 +163,36 @@
   color: #94a3b8;
   margin-bottom: 16px;
   font-family: "Silkscreen", monospace;
-
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards 1.1s;
 }
-
 /* ───────── THEME IMAGE ───────── */
 .hero-theme-image {
-  width: clamp(280px, 50vw, 500px);
-  /* Fluid width */
-  max-width: 100%;
+  width: clamp(250px, 40vw, 400px);
+  /* Slightly smaller to ensure fit */
+  max-width: 90%;
   height: auto;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  /* Reduced margin */
   filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.25));
-
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards 1.4s;
 }
-
 /* ───────── MOBILE ───────── */
 @media (max-width: 768px) {
   .hero-content {
     padding: 0 5%;
   }
-
   .hero-title-line {
     font-size: clamp(1.2rem, 6vw, 2.5rem);
     white-space: normal;
     /* Allow wrapping on mobile */
     line-height: 1.2;
   }
-
   .hero-uni-line {
     font-size: clamp(0.8rem, 3vw, 1.2rem);
   }
 }
-
 @media (max-width: 400px) {
   .hero-title-line {
     font-size: 1.2rem;
