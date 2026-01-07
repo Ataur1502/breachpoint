@@ -18,8 +18,13 @@ const Hero: React.FC = () => {
           <br></br>
           {/* Line 1 */}
           <p className="hero-uni-line">
-            Malla Reddy University Dept of Cyber Security School of Engineering
-            <br></br>presents
+            Malla Reddy University
+            <br />
+            Department of Cyber Security
+            <br />
+            School of Engineering
+            <br />
+            presents
           </p>
           <br></br>
           <p className="hero-season-line">
