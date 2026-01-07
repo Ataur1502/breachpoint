@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 
 import Navbar from "./components/navbar";
+import Popup from "./components/Popup";
 import Preloader from "./components/Preloader";
 import CustomCursor from "./components/CustomCursor";
 import Hero from "./sections/Hero";
@@ -30,6 +31,7 @@ const App: React.FC = () => {
 
       {!isLoading && (
         <>
+          <Popup />
           <CustomCursor />
           <Navbar />
           <main>
