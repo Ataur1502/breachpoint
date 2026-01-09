@@ -11,7 +11,7 @@ const Rules: React.FC = () => {
         <div className="rules-content">
           <h3 className="rules-subtitle">Eligibility</h3>
           <ul>
-            <li>The competition is open <strong>only to students</strong>.</li>
+            <li>The competition is open <strong>to all cyber enthusiast</strong>.</li>
             <li>Participants must register as a <strong>team of 1 to 3 members</strong>.</li>
             <li>Each participant may be part of <strong>only one team</strong>.</li>
           </ul>
