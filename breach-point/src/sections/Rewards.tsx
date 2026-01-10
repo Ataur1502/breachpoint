@@ -22,7 +22,6 @@ const Rewards: React.FC = () => {
 
                         <div className="rewards-description">
                             <p>
-                                Compete for a total prize pool worth <strong>₹1,00,000</strong>!
                                 Top performers will receive exclusive perks.
                             </p>
 
