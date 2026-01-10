@@ -29,7 +29,7 @@ const Rewards: React.FC = () => {
                             <ul className="rewards-list">
                                 <li>
                                     <CheckCircle2 className="check-icon" />
-                                    <span>Cash Prizes worth ₹1 Lakh</span>
+                                    <span>Win Exiciting Cash Prizes</span>
                                 </li>
                                 <li>
                                     <CheckCircle2 className="check-icon" />
